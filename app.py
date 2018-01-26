@@ -18,10 +18,11 @@ def hello_world():
         'Host': 'mobile-api.haodf.com'
     }
     post_data = 'n=2&s=tb&lastPostId=&userId=0&api=1.2&caseId={caseId}&caseType=flow&m=MI%205&app=p&os=android&sv=7.0&di=862033036085049&v=5.2.3&deviceToken=862033036085049&p=1&currentUserId=0'.format(caseId=caseId)
-    res = requests.post(url,data=post_data,headers=headers)
+    try:
+	res = requests.post(url,data=post_data,headers=headers)
         return str(res.txt)
     except:
-	return str({error_caseId:caseId})
+        return str({error_caseId:caseId})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=2333)
