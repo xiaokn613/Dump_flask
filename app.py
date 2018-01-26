@@ -10,7 +10,7 @@ f = open('error_caseID.text','ab+')
 def hello_world():
     caseId = request.args.get("caseId") 
     url = 'http://mobile-api.haodf.com/patientapi/flow_getCaseStatusAndDetail'
-    mheaders={
+    headers={
         'Accept-Encoding': 'gzip',
         'User-Agent': 'haodf_app/1.0',
         'Content-Type': 'application/x-www-form-urlencoded',
